@@ -4,12 +4,27 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve:test": "vue-cli-service serve --mode test",
+    "serve:pro": "vue-cli-service serve --mode production",
+    "build": "vue-cli-service build --mode production",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "(src/**/*.{js,vue})|__tests__/**/*.js": [
+      "pretty-quick --staged",
+      "eslint --fix"
+    ]
+  },
   "dependencies": {
+    "ant-design-vue": "^2.0.0-rc.7",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
     "vue-class-component": "^8.0.0-0",
@@ -33,9 +48,13 @@
     "@vue/test-utils": "^2.0.0-0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
-    "less": "^3.0.4",
+    "lint-staged": "^10.2.7",
+    "husky": "^4.3.6",
+    "less": "^3.13.1",
     "less-loader": "^5.0.0",
+    "style-resources-loader": "^1.4.1",
     "typescript": "~3.9.3",
+    "vue-cli-plugin-style-resources-loader": "^0.1.4",
     "vue-jest": "^5.0.0-0"
   }
 }
