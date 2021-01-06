@@ -1,11 +1,11 @@
 <template>
   <div class="Demo">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <p>{{ $filters.Money(str) }}</p>
+    <p>{{ $f.Money(str) }}</p>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>
-
+``
 <script lang="ts">
 import { reactive, toRefs } from 'vue';
 import HelloWorld from '@/components/HelloWorld.vue';

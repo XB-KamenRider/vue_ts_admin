@@ -11,7 +11,7 @@
       <a-sub-menu v-for="item in menuList" :key="item.key">
         <template #title>
           <div>
-            <MailOutlined /><span>{{ item.name }}</span>
+            <span>{{ item.name }}</span>
           </div>
         </template>
         <a-menu-item v-for="row in item.children" :key="row.key">{{
@@ -41,11 +41,13 @@ export default {
         children: [
           {
             key: '1-1',
-            name: '用户列表'
+            name: '用户列表',
+            url: ''
           },
           {
             key: '1-2',
-            name: '用户组管理'
+            name: '用户组管理',
+            url: ''
           }
         ]
       },
@@ -55,15 +57,18 @@ export default {
         children: [
           {
             key: '2-1',
-            name: '导航菜单配置'
+            name: '导航菜单配置',
+            url: ''
           },
           {
             key: '2-2',
-            name: '查看子菜单'
+            name: '查看子菜单',
+            url: ''
           },
           {
             key: '2-3',
-            name: '页面管理'
+            name: '页面管理',
+            url: ''
           }
         ]
       },
@@ -73,12 +78,14 @@ export default {
         children: [
           {
             key: '3-1',
-            name: '商家权限定制'
+            name: '商家权限定制',
+            url: ''
           }
         ]
       }
     ]);
-    const handleClick = function () {
+    const handleClick = function (res: object) {
+      console.log(res);
       return 1;
     };
     return {
@@ -92,5 +99,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-
 </style>

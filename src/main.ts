@@ -16,3 +16,11 @@ app
   .use(Antd)
   .use(router)
   .mount('#app');
+
+// 配置全局参数页面提示问题
+declare module '@vue/runtime-core' {
+  export interface ComponentCustomProperties {
+    $f: typeof Filters;
+  }
+}
+export {};
