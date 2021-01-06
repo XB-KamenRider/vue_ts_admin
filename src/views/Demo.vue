@@ -1,7 +1,7 @@
 <template>
   <div class="Demo">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <p>{{ $f.Money(str) }}</p>
+    <p>{{ $filters.Money(str) }}</p>
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
   </div>
 </template>

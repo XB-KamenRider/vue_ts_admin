@@ -20,7 +20,7 @@ app
 // 配置全局参数页面提示问题
 declare module '@vue/runtime-core' {
   export interface ComponentCustomProperties {
-    $f: typeof Filters;
+    $filters: typeof Filters;
   }
 }
 export {};
